@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="FYN_CO._Symbol_Transparent.svg" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <title>Buy Trout Glidebait | Fyn Co. Lures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hero {
+        background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1600185365983-ccf3f61f05e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+        }
+        h1, h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        letter-spacing: 0.5px;
+        }
+        .hero a,
+        .product-section a {
+        text-decoration: none;
+        color: white;
+        background-color: #111;
+        padding: 12px 24px;
+        margin: 10px 10px 0 0;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: background-color 0.2s ease;
+        display: inline-block;
+        }
+        section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-bottom: 1px solid #eee;
+        }
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #ffffff;
+            color: #111;
+        }
+        header {
+            background-color: #0a0a0a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 40px;
+        }
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        header nav a {
+            color: #8b8b88;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 20px;
+            font-family: 'Bebas neue';
+        }
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .product-image {
+            flex: 1 1 400px;
+        }
+        .product-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .product-details {
+            flex: 1 1 300px;
+        }
+        .product-details h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .product-details p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .buy-button:hover {
+            background-color: #333;
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero a {
+            font-size: 14px;
+            padding: 10px 18px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="FYN_CO._Transparent.png" alt="Fyn Co. Logo">
+    <nav>
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 6px;">HOME</a>
+        <a href="shop.html" style="display: inline-flex; align-items: center; gap: 6px;">SHOP</a>
+        <a href="about.html" style="display: inline-flex; align-items: center; gap: 6px;">ABOUT</a>
+        <a href="videos.html" style="display: inline-flex; align-items: center; gap: 6px;">VIDEOS </a>
+        <a href="cart.html" style="display: inline-flex; align-items: center; gap: 6px;">CART
+        <span id="cart-count" style="font-family:'Bebas neue'; margin-left: 4px;">(0)</span>
+        <img src="cart.svg" alt="Cart" height="20" width="20" style="vertical-align: middle;">
+        </a>
+        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 6px;">CONTACT</a>
+    </nav>
+</header>
+
+<div class="main">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="FYN CO. Premier.png" alt="Trout Glidebait">
+        </div>
+        <div class="product-details">
+            <h1>The Premiere</h1>
+            <p>This 10-inch, 10.4 oz resin glidebait is handcrafted for serious anglers targeting trophy fish. Designed for a natural swimming action with a slow sink and realistic trout profile. Rigged with heavy-duty Owner split rings and treble hooks.</p>
+            <div class="price">$149.99</div>
+            <a href="#" class="buy-button">Coming Soon</a>
+        </div>
+        <div style="margin-bottom: 20px;">
+    <label for="qty" style="font-weight: bold;">Quantity:</label>
+    <input type="number" id="qty" name="qty" min="1" value="1" style="width: 60px; margin-left: 10px;">
+</div>
+
+<button onclick="addToCart('Fyn Co. Premier 10&quot; Trout Glidebait', 149.99)">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Fyn Co. Lures. All rights reserved. Handmade in California.</p>
+    <p>
+  <a href="#" style="color: white; text-decoration: none; margin: 0 10px;">Instagram</a> |
+  <a href="#" style="color: white; text-decoration: none; margin: 0 10px;">YouTube</a> |
+  <a href="mailto:flaminggamer07@gmail.com" style="color: white; text-decoration: none; margin: 0 10px;">Email</a>
+</p>
+</footer>
+
+</body>
+<script>
+function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem("fynco_cart") || "[]");
+    let qtyInput = document.getElementById("qty");
+    let qty = parseInt(qtyInput.value);
+
+    if (!qty || qty < 1) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+
+    // Check if item is already in cart
+    const index = cart.findIndex(item => item.name === name);
+    if (index >= 0) {
+        cart[index].qty += qty;
+    } else {
+        cart.push({ name, price, qty });
+    }
+
+    localStorage.setItem("fynco_cart", JSON.stringify(cart));
+    alert(`${qty} item${qty > 1 ? "s" : ""} added to cart!`);
+    updateCartCount();
+}
+</script>
+</html>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<script>
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("fynco_cart") || "[]");
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    const cartCountEl = document.getElementById("cart-count");
+    if (cartCountEl) {
+        cartCountEl.textContent = `(${totalQty})`;
+    }
+
+
+}
+
+// Run on page load
+updateCartCount();
+</script>

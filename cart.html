@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="FYN_CO._Symbol_Transparent.svg" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <title>Cart | Fyn Co. Lures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hero {
+        background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1600185365983-ccf3f61f05e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+        }
+        h1, h2 {
+        font-family: 'Bebas Neue', sans-serif;
+        letter-spacing: 0.5px;
+        }
+        .hero a,
+        .product-section a {
+        text-decoration: none;
+        color: white;
+        background-color: #111;
+        padding: 12px 24px;
+        margin: 10px 10px 0 0;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: background-color 0.2s ease;
+        display: inline-block;
+        }
+        section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-bottom: 1px solid #eee;
+        }
+        section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-bottom: 1px solid #eee;
+        }
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #ffffff;
+            color: #111;
+        }
+        header {
+            background-color: #0a0a0a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 40px;
+        }
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        header nav a {
+            color: #8b8b88;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 20px;
+            font-family: 'Bebas neue';
+        }
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: right;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #111;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero a {
+            font-size: 14px;
+            padding: 10px 18px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="FYN_CO._Transparent.svg" alt="Fyn Co. Logo">
+    <nav>
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 6px;">HOME</a>
+        <a href="shop.html" style="display: inline-flex; align-items: center; gap: 6px;">SHOP</a>
+        <a href="about.html" style="display: inline-flex; align-items: center; gap: 6px;">ABOUT</a>
+        <a href="videos.html" style="display: inline-flex; align-items: center; gap: 6px;">VIDEOS </a>
+        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 6px;">CONTACT</a>
+    </nav>
+</header>
+
+<div class="main">
+    <h1>Your Cart</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="total" id="cart-total">Total: $0.00</div>
+    <br>
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="paypal-form">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="upload" value="1">
+        <input type="hidden" name="business" value="sb-lizd444566586@business.example.com">
+        <input type="hidden" name="return" value="https://www.fyncolures.com/orderplaced">
+        <div id="paypal-items"></div>
+        <button type="submit">Checkout with PayPal</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2025 Fyn Co. Lures. All rights reserved. Handmade in California.</p>
+    <p>
+  <a href="#" style="color: white; text-decoration: none; margin: 0 10px;">Instagram</a> |
+  <a href="#" style="color: white; text-decoration: none; margin: 0 10px;">YouTube</a> |
+  <a href="mailto:flaminggamer07@gmail.com" style="color: white; text-decoration: none; margin: 0 10px;">Email</a>
+</p>
+</footer>
+
+<script>
+const products = JSON.parse(localStorage.getItem('fynco_cart') || '[]');
+
+function updateCartDisplay() {
+    const tbody = document.querySelector('#cart-table tbody');
+    const totalDisplay = document.getElementById('cart-total');
+    const paypalItems = document.getElementById('paypal-items');
+    tbody.innerHTML = '';
+    paypalItems.innerHTML = '';
+    let total = 0;
+
+    products.forEach((item, index) => {
+        const row = document.createElement('tr');
+        const lineTotal = item.qty * item.price;
+        total += lineTotal;
+
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.qty}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>$${lineTotal.toFixed(2)}</td>
+            <td><button onclick="removeItem(${index})">Remove</button></td>
+        `;
+        tbody.appendChild(row);
+
+        paypalItems.innerHTML += `
+            <input type="hidden" name="item_name_${index+1}" value="${item.name}">
+            <input type="hidden" name="amount_${index+1}" value="${item.price.toFixed(2)}">
+            <input type="hidden" name="quantity_${index+1}" value="${item.qty}">
+        `;
+    });
+
+    totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+function removeItem(index) {
+    products.splice(index, 1);
+    localStorage.setItem('fynco_cart', JSON.stringify(products));
+    updateCartDisplay();
+}
+
+updateCartDisplay();
+</script>
+
+</body>
+</html>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">

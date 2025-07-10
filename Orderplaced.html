@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You - Fyn Co. Lures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fdfdfd;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0a0a0a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #8b8b88;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Bebas neue';
+    }
+
+    main {
+      text-align: center;
+      padding: 80px 20px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    a.button {
+      background-color: #111;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #333;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <img src="FYN_CO._Transparent.svg" alt="Fyn Co. Logo">
+    <nav>
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 6px;">HOME</a>
+        <a href="shop.html" style="display: inline-flex; align-items: center; gap: 6px;">SHOP</a>
+        <a href="about.html" style="display: inline-flex; align-items: center; gap: 6px;">ABOUT</a>
+        <a href="videos.html" style="display: inline-flex; align-items: center; gap: 6px;">VIDEOS </a>
+        <a href="cart.html" style="display: inline-flex; align-items: center; gap: 6px;">CART
+        <span id="cart-count" style="font-family:'Bebas neue'; margin-left: 4px;">(0)</span>
+        <img src="cart.svg" alt="Cart" height="20" width="20" style="vertical-align: middle;">
+        </a>
+        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 6px;">CONTACT</a>
+    </nav>
+</header>
+
+<main>
+  <h1>Thank You for Your Order!</h1>
+  <p>Your purchase means a lot to us. We’re excited for you to try your new Fyn Co. lure — tight lines!</p>
+  <a href="shop.html" class="button">Return to Shop</a>
+</main>
+
+<footer>
+  <p>
+    <a href="#">Instagram</a> |
+    <a href="#">YouTube</a> |
+    <a href="mailto:you@example.com">Email</a>
+  </p>
+  <p>© 2025 Fyn Co. Lures. All rights reserved.</p>
+</footer>
+
+<script>
+  // Clear the cart on thank-you page
+  localStorage.removeItem("fynco_cart");
+</script>
+
+</body>
+</html>
